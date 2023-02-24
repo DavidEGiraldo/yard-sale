@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root{
+            --very-light-pink: #c7c7c7;
+            --white:#ffffff;
+            --text-input-field: #f7f7f7;
+            --black: #000000;
+            --hospital-green: #acd9b2;
+            --dark: #232830;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            /* font-family: 'Roboto', sans-serif; */
+        }
+        .shopping-cart {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 360px;
+            min-height: 100vh;
+            max-height: fit-content;
+            padding: 16px;
+            box-shadow: 0px 0px 4px 0px var(--very-light-pink);
+            background-color: beige;
+            box-sizing: border-box;
+        }
+        .title {
+            display: flex;
+            margin-bottom: 16px;
+        }
+        .title h1 {
+            font-size: var(--lg);
+            margin: 0;
+        }
+        .title img {
+            transform: rotate(180deg);
+            margin: 0 16px;
+        }
+        .shopping-cart-content {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+        }
+        .item {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .item figure {
+            margin: 0;
+        }
+        .item figure img {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .item p:nth-child(2) {
+            color: var(--dark);
+        }
+        .item p:nth-child(3) {
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .item img {
+            margin-right: 4px;
+        }
+        .order {
+            display: grid;
+            gap: 16px;
+            align-items: center;
+            grid-template-columns: auto 1fr;
+            background-color: var(--text-input-field);
+            border-radius: 8px;
+            padding: 8px 24px;
+            margin-bottom: 24px;
+        }
+        .order p:first-child {
+            font-size: var(--sm);
+            font-weight: 700;
+        }
+        .order p:last-child {
+            text-align: end;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .primary-button {
+            padding: 18px;
+            font-size: var(--md);
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        @media (max-width: 640px) {
+            .title {
+                display: none;
+            }
+            .shopping-cart {
+                width: 100%;
+            }
+            .shopping-cart-content {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="shopping-cart">
+        <div class="title">
+            <img src="./icons/flechita.svg" alt="arrow">
+            <h1 class=>Shopping cart</h1>
+        </div>
+        
+        <div class="shopping-cart-content">
+            
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+            <div class="item">
+                <figure>
+                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book">
+                </figure>
+                <p>Book</p>
+                <p>$100.00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div>
+
+        </div>
+        <div class="order">
+            <p>Total</p>
+            <p>$560.00</p>
+        </div>
+        <button class="primary-button">
+            Checkout
+        </button>
+    </div>
+    
+</body>
+</html>
