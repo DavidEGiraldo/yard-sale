@@ -1,3 +1,4 @@
+/* General */
 :root{
     --very-light-pink: #c7c7c7;
     --white:#ffffff;
@@ -13,9 +14,8 @@ body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
-.inactive {
-    display: none;
-}
+
+/* Navbar */
 .navbar {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -28,6 +28,7 @@ body {
 }
 .menu {
     display: none;
+    cursor: pointer;
 }
 .logo {
     width: 140px;
@@ -69,8 +70,7 @@ body {
     transform: rotate(90deg);
 }
 
-
-
+/* Desktop menu */
 .desktop-menu {
     position: absolute;
     top: 56px;
@@ -99,7 +99,7 @@ body {
     font-size: var(--md);
     margin: 20px 0 20px;
 }
-hr {
+.desktop-menu hr {
     border-top: 1px var(--very-light-pink) solid;
     margin: 20px 0 20px;
 }        
@@ -109,8 +109,51 @@ hr {
     margin: 0 0 28px;
 }
 
+/* Mobile menu */
+.mobile-menu {
+    position: absolute;
+    top: 56px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: -1;
+}
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.mobile-menu hr {
+    border-top: 1px var(--very-light-pink) solid;
+    margin: 20px 0;
+}
+.mobile-menu ul:last-child li{
+    margin-bottom: 0;
+}
+.mobile-menu ul li{
+    margin-bottom: 28px;
+}
+.mobile-menu ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--black);
+}
 
+.mobile-menu .email {
+    font-size: var(--sm);
+    font-weight: 300;
+}
+.mobile-menu .sign-out {
+    font-size: var(--sm);
+    color: var(--hospital-green);
+}
 
+.inactive {
+    display: none;
+}
 
 @media (max-width: 640px) {
     .navbar {
@@ -127,6 +170,14 @@ hr {
         display: none;
     }
     .navbar .right-menu .account {
+        display: none;
+    }
+    .desktop-menu {
+        display: none;
+    }
+}
+@media (min-width: 641px) {
+    .mobile-menu{
         display: none;
     }
 }
