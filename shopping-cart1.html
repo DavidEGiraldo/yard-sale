@@ -26,6 +26,8 @@
             /* font-family: 'Roboto', sans-serif; */
         }
         .shopping-cart {
+            position: absolute;
+            right: 0;
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 360px;
@@ -33,7 +35,7 @@
             max-height: fit-content;
             padding: 16px;
             box-shadow: 0px 0px 4px 0px var(--very-light-pink);
-            background-color: beige;
+            background-color: var(--white);
             box-sizing: border-box;
         }
         .title {
@@ -125,7 +127,7 @@
 </head>
 <body>
     
-    <div class="shopping-cart">
+    <aside class="shopping-cart">
         <div class="title">
             <img src="./icons/flechita.svg" alt="arrow">
             <h1 class=>Shopping cart</h1>
@@ -190,7 +192,7 @@
         <button class="primary-button">
             Checkout
         </button>
-    </div>
+    </aside>
     
 </body>
 </html>
