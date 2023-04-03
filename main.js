@@ -3,12 +3,15 @@ const desktopMenu = document.querySelector(".desktop-menu")
 const mobileMenu = document.querySelector(".mobile-menu")
 const iconMenu = document.querySelector(".menu")
 const iconCart = document.querySelector(".shopping-cart-icon")
-const shoppingCart = document.querySelector(".shopping-cart")
+const shoppingCart = document.querySelector("#shopping-cart")
+const productDetail = document.querySelector("#product-detail")
 const cardsContainer = document.querySelector(".cards-container")
+const closeButton = document.querySelector(".close")
 
 emailMenu.addEventListener("click", toggleDesktopMenu)
 iconMenu.addEventListener("click", toggleMobileMenu)
 iconCart.addEventListener("click", toggleShoppingCart)
+closeButton.addEventListener("click", toggleProductDetail)
 
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle("inactive")
@@ -17,12 +20,21 @@ function toggleDesktopMenu() {
 function toggleMobileMenu() {
     mobileMenu.classList.toggle("inactive")
     shoppingCart.classList.add("inactive")
+    productDetail.classList.add("inactive")
 }
 
 function toggleShoppingCart() {
     shoppingCart.classList.toggle("inactive")
     mobileMenu.classList.add("inactive")
     desktopMenu.classList.add("inactive")
+    productDetail.classList.add("inactive")
+}
+
+function toggleProductDetail() {
+    productDetail.classList.toggle("inactive")
+    mobileMenu.classList.add("inactive")
+    desktopMenu.classList.add("inactive")
+    shoppingCart.classList.add("inactive")
 }
 
 const productList = []
@@ -52,6 +64,7 @@ function renderProducts(arr){
         productImg.classList.add("product-img")
         productImg.setAttribute("src", product.img)
         productImg.setAttribute("alt", "product image")
+        productImg.addEventListener("click", toggleProductDetail)
     
         const productInfo = document.createElement("div")
         productInfo.classList.add("product-info")
