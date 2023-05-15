@@ -1,0 +1,26 @@
+@use "./vars";
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.item figure {
+  margin: 0;
+}
+.item figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.item p:nth-child(2) {
+  color: var(--dark);
+}
+.item p:last-child {
+  color: var(--dark);
+  font-weight: 700;
+  padding-inline-end: 24px;
+}

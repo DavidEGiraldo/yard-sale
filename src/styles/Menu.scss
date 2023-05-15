@@ -1,0 +1,35 @@
+@use "./vars";
+
+.desktop-menu {
+  width: 100px;
+  height: auto;
+  box-shadow: 0px 0px 4px 0px var(--very-light-pink);
+  border-radius: 6px;
+  padding: 0 20px 0;
+}
+.desktop-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.desktop-menu ul li {
+  text-align: end;
+  
+}
+.desktop-menu ul li a {
+  display: inline-block;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--md);
+  margin: 20px 0 20px;
+}
+hr {
+  border-top: 1px var(--very-light-pink) solid;
+  margin: 20px 0 20px;
+}        
+.desktop-menu ul li:last-child a {
+  color: var(--hospital-green);
+  font-size: var(--sm);
+  margin: 0 0 28px;
+}

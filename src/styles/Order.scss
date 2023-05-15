@@ -1,0 +1,29 @@
+@use "./vars";
+
+.order {
+  display: grid;
+  gap: 16px;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  background-color: var(--text-input-field);
+  border-radius: 8px;
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+.order p:first-child {
+  display: flex;
+  flex-direction: column;
+}
+.order p span:first-child {
+  font-size: var(--md);
+  font-weight: 700;
+}
+.order p span:last-child {
+  font-size: var(--sm);
+  color: var(--dark);
+}
+.order p:last-child {
+  text-align: end;
+  color: var(--dark);
+  font-weight: 700;
+}

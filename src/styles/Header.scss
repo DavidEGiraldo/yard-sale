@@ -1,0 +1,69 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 0 48px;
+  box-shadow: 0px 0px 4px 0px var(--very-light-pink);
+  height: 56px;
+  min-width: fit-content;
+}
+.menu {
+  display: none;
+}
+.logo {
+  width: 140px;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+.navbar .categories li a {
+  text-decoration: none;
+  font-size: var(--md);
+  font-weight: 700;
+  color: var(--dark);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px var(--white) solid;
+}
+.navbar .categories li a:hover {
+  border: 1px var(--hospital-green) solid;
+  color: var(--hospital-green);
+}
+.navbar .right-menu {
+  gap: 20px;
+}
+.navbar .right-menu .account {
+  display: flex;
+  gap: 8px;
+}
+.navbar .right-menu .account p {
+  color: var(--dark);
+  font-size: var(--sm);
+}
+.navbar .right-menu .account img {
+  transform: rotate(90deg);
+}
+@media (max-width: 640px) {
+  .navbar {
+      padding: 0 24px;
+      justify-items: center;
+  }
+  .menu {
+      display: block;
+  }
+  .logo {
+      width: 120px;
+  }
+  .navbar .categories {
+      display: none;
+  }
+  .navbar .right-menu .account {
+      display: none;
+  }
+}

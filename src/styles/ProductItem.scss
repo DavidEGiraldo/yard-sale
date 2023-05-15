@@ -1,0 +1,33 @@
+@use "./vars";
+
+.product-card {
+  width: var(--card-size);
+  margin-top: 12px;
+}
+.product-img {
+  width: var(--card-size);
+  height: var(--card-size);
+  border-radius: 20px;
+  object-fit: cover;
+}
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.product-info figure {
+  margin: 0;
+}
+.product-info div p:first-child {
+  font-weight: 700;
+  font-size: var(--md);
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+.product-info div p:last-child {
+  font-size: var(--sm);
+  color: var(--dark);
+  margin-top: 0;
+  margin-bottom: 0;
+}
