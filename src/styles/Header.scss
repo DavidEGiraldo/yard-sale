@@ -11,7 +11,7 @@
 .menu {
   display: none;
 }
-.logo {
+.nav-logo {
   width: 140px;
 }
 .navbar ul {
@@ -41,6 +41,7 @@
 .navbar .right-menu .account {
   display: flex;
   gap: 8px;
+  cursor: pointer;
 }
 .navbar .right-menu .account p {
   color: var(--dark);
@@ -57,7 +58,7 @@
   .menu {
       display: block;
   }
-  .logo {
+  .nav-logo {
       width: 120px;
   }
   .navbar .categories {

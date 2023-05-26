@@ -1,16 +1,31 @@
-import React from 'react'
-import "../styles/Login.scss"
+import React, { useRef } from 'react'
+import "@styles/Login.scss"
+
+import logo from "@logos/logo_yard_sale.svg"
 
 const Login = () => {
+
+  const form = useRef(null)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(form.current)
+    const data = {
+      username: formData.get("email"),
+      password: formData.get("password")
+    }
+    console.log(data)
+  }
+
   return (
     <div className="login">
       <div className="form-container">
-        <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
-        <form action="/" className="form">
+        <img src={logo} alt="logo" className="logo" />
+        <form action="/" className="form" ref={form} onSubmit={handleSubmit}>
           <label htmlFor="email" className="label">Email address</label>
-          <input type="email" id="email" placeholder="example@mail.com" className="input input-email" />
+          <input type="email" name="email" placeholder="example@mail.com" className="input input-email" />
           <label htmlFor="password" className="label">Password</label>
-          <input type="password" id="password" placeholder="***************" className="input input-password" />
+          <input type="password" name="password" placeholder="***************" className="input input-password" />
           <button type="submit" className="primary-button login-button">Log in</button>
         </form>
         <a href="/" className="forgot-password">Forgot my password</a>

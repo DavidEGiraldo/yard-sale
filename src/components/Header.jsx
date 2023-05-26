@@ -1,11 +1,25 @@
-import React from 'react'
-import "../styles/Header.scss"
+import React, { useState } from 'react'
+import "@styles/Header.scss"
+
+import Menu from "@components/Menu"
+
+import logo from "@logos/logo_yard_sale.svg"
+import iconMenu from "@icons/icon_menu.svg"
+import iconArrow from "@icons/flechita.svg"
+import iconShoppingCart from "@icons/icon_shopping_cart_notification.svg"
 
 const Header = () => {
+
+  const [toggle, setToggle] = useState(false)
+
+  const handleToggle = () => {
+    setToggle(!toggle)
+  }
+
   return (
     <nav className="navbar">
-      <img src="./icons/icon_menu.svg" alt="menu-mobile" className="menu" />
-      <img src="./logos/logo_yard_sale.svg" alt="logo yard sale" className="logo" />
+      <img src={iconMenu} alt="menu-mobile" className="menu" />
+      <img src={logo} alt="logo yard sale" className="nav-logo" />
       <ul className="categories">
         <li>
           <a href="/">All</a>
@@ -27,14 +41,15 @@ const Header = () => {
         </li>
       </ul>
       <ul className="right-menu">
-        <li className="account">
+        <li className="account" onClick={handleToggle}>
           <p>example@mail.com</p>
-          <img src="./icons/flechita.svg" alt="menu-desktop" />
+          <img src={iconArrow} alt="menu-desktop" />
         </li>
         <li className="shopping-cart">
-          <img src="./icons/icon_shopping_cart_notification.svg" alt="shopping cart" />
+          <img src={iconShoppingCart} alt="shopping cart" />
         </li>
       </ul>
+      {toggle && <Menu />}
     </nav>
 
   )
