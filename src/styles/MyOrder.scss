@@ -1,27 +1,28 @@
 @use "./vars";
 
-.shopping-cart {
-  position: absolute;
+aside {
+  position: fixed;
   right: 0;
+  top: 56px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   width: 360px;
-  min-height: 100vh;
-  max-height: fit-content;
+  height: calc(100vh - 56px);
   padding: 16px;
   box-shadow: 0px 0px 4px 0px var(--very-light-pink);
   background-color: var(--white);
   box-sizing: border-box;
+  overflow-y: auto;
 }
-.title {
+aside .title {
   display: flex;
   margin-bottom: 16px;
 }
-.title h1 {
+aside .title h1 {
   font-size: var(--lg);
   margin: 0;
 }
-.title img {
+aside .title img {
   transform: rotate(180deg);
   margin: 0 16px;
 }
@@ -30,7 +31,33 @@
   flex-direction: column;
   margin-top: 24px;
 }
-.order {
+.shopping-cart-content .item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.shopping-cart-content .item figure {
+  margin: 0;
+}
+.shopping-cart-content .item figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.shopping-cart-content .item p:nth-child(2) {
+  color: var(--dark);
+}
+.shopping-cart-content .item p:nth-child(3) {
+  color: var(--dark);
+  font-weight: 700;
+}
+.shopping-cart-content .item img {
+  margin-right: 4px;
+}
+aside .order {
   display: grid;
   gap: 16px;
   align-items: center;
@@ -40,16 +67,16 @@
   padding: 8px 24px;
   margin-bottom: 24px;
 }
-.order p:first-child {
+aside .order p:first-child {
   font-size: var(--sm);
   font-weight: 700;
 }
-.order p:last-child {
+aside .order p:last-child {
   text-align: end;
   color: var(--dark);
   font-weight: 700;
 }
-.primary-button {
+aside .primary-button {
   padding: 18px;
   font-size: var(--md);
   font-weight: 700;
@@ -65,7 +92,7 @@
   .title {
       display: none;
   }
-  .shopping-cart {
+  aside {
       width: 100%;
   }
   .shopping-cart-content {

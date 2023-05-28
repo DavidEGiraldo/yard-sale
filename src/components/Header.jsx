@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import "@styles/Header.scss"
+import React, { useState, useContext } from "react";
+import "@styles/Header.scss";
 
-import Menu from "@components/Menu"
+import Menu from "@components/Menu";
+import MyOrder from "@containers/MyOrder";
 
-import logo from "@logos/logo_yard_sale.svg"
-import iconMenu from "@icons/icon_menu.svg"
-import iconArrow from "@icons/flechita.svg"
-import iconShoppingCart from "@icons/icon_shopping_cart_notification.svg"
+import AppContext from "@context/AppContext";
+
+import logo from "@logos/logo_yard_sale.svg";
+import iconMenu from "@icons/icon_menu.svg";
+import iconArrow from "@icons/flechita.svg";
+import iconShoppingCart from "@icons/icon_shopping_cart.svg";
+import iconShoppingCartNotification from "@icons/icon_shopping_cart_notification.svg";
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+  const [toggleOrder, setToggleOrder] = useState(false);
 
-  const [toggle, setToggle] = useState(false)
-
-  const handleToggle = () => {
-    setToggle(!toggle)
-  }
+  const { state } = useContext(AppContext);
 
   return (
     <nav className="navbar">
@@ -41,18 +43,28 @@ const Header = () => {
         </li>
       </ul>
       <ul className="right-menu">
-        <li className="account" onClick={handleToggle}>
+        <li className="account" onClick={() => setToggle(!toggle)}>
           <p>example@mail.com</p>
           <img src={iconArrow} alt="menu-desktop" />
         </li>
-        <li className="shopping-cart">
-          <img src={iconShoppingCart} alt="shopping cart" />
+        <li
+          className="shopping-cart"
+          onClick={() => setToggleOrder(!toggleOrder)}
+        >
+          <img
+            src={
+              state.cart.length > 0
+                ? iconShoppingCartNotification
+                : iconShoppingCart
+            }
+            alt="shopping cart"
+          />
         </li>
       </ul>
       {toggle && <Menu />}
+      {toggleOrder && <MyOrder />}
     </nav>
-
-  )
-}
+  );
+};
 
 export default Header

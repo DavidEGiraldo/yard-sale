@@ -1,19 +1,23 @@
-import React from 'react'
-import "@styles/ShoppingCartItem.scss"
+import React, { useContext } from "react";
+import AppContext from "@context/AppContext"
+import "@styles/ShoppingCartItem.scss";
 
-import iconClose from "@icons/icon_close.png"
+import iconClose from "@icons/icon_close.png";
 
-const ShoppingCartItem = () => {
+const ShoppingCartItem = ({ product }) => {
+
+  const {removeFromCart} = useContext(AppContext)
+
   return (
     <div className="item">
       <figure>
-        <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book" />
+        <img src={product.images[0]} alt={product.title} />
       </figure>
-      <p>Book</p>
-      <p>$100.00</p>
-      <img src={iconClose} alt="close" />
+      <p>{product.title}</p>
+      <p>${product.price}</p>
+      <img src={iconClose} alt="close" onClick={() => removeFromCart(product)}/>
     </div>
-  )
-}
+  );
+};
 
-export default ShoppingCartItem
+export default ShoppingCartItem;

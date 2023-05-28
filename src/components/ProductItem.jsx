@@ -8,14 +8,7 @@ import btAddedToCart from "@icons/bt_added_to_cart.svg"
 
 const ProductItem = ({product}) => {
 
-  const { addToCart } = useContext(AppContext)
-
-  const [cart, setCart] = useState(false)
-
-  const handleClick = (item) => {
-    setCart(!cart)
-    addToCart(item)
-  }
+  const { state, addToCart, removeFromCart } = useContext(AppContext)
 
   return (
     <div className="product-card">
@@ -25,9 +18,16 @@ const ProductItem = ({product}) => {
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)}>
-          <img src={!cart ? btAddToCart : btAddedToCart} alt="add to cart icon" />
-        </figure>
+        {!state.cart.includes(product) ? 
+          <figure onClick={() => addToCart(product)}>
+            <img src={btAddToCart} alt="add to cart icon" />
+          </figure>
+          :
+          <figure onClick={() => removeFromCart(product)}>
+            <img src={btAddedToCart} alt="remove from cart icon" />
+          </figure>
+        }
+        
       </div>
     </div>
   )
