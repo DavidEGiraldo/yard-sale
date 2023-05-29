@@ -1,5 +1,5 @@
-import React from 'react'
-import "@styles/Order.scss"
+import React from "react";
+import "@styles/Order.scss";
 
 const Order = () => {
   return (
@@ -10,8 +10,7 @@ const Order = () => {
       </p>
       <p>$560.00</p>
     </div>
+  );
+};
 
-  )
-}
-
-export default Order
+export default Order;

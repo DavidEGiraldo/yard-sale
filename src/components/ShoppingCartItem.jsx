@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import AppContext from "@context/AppContext"
+import AppContext from "@context/AppContext";
 import "@styles/ShoppingCartItem.scss";
 
 import iconClose from "@icons/icon_close.png";
 
 const ShoppingCartItem = ({ product }) => {
-
-  const {removeFromCart} = useContext(AppContext)
+  const { removeFromCart } = useContext(AppContext);
 
   return (
     <div className="item">
@@ -15,7 +14,11 @@ const ShoppingCartItem = ({ product }) => {
       </figure>
       <p>{product.title}</p>
       <p>${product.price}</p>
-      <img src={iconClose} alt="close" onClick={() => removeFromCart(product)}/>
+      <img
+        src={iconClose}
+        alt="close"
+        onClick={() => removeFromCart(product)}
+      />
     </div>
   );
 };

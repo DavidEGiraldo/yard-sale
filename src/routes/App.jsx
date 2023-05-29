@@ -1,26 +1,24 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Layout from '@containers/Layout'
-import Login from '@pages/Login'
-import Home from '@pages/Home'
-import PasswordRecovery from '@pages/PasswordRecovery'
-import NewPassword from '@pages/NewPassword'
-import MyAccount from "@pages/MyAccount"
-import CreateAccount from "@pages/CreateAccount"
-import Checkout from "@pages/Checkout"
-import Orders from "@pages/Orders"
-import NotFound from '@pages/NotFound'
+import Layout from "@containers/Layout";
+import Login from "@pages/Login";
+import Home from "@pages/Home";
+import PasswordRecovery from "@pages/PasswordRecovery";
+import NewPassword from "@pages/NewPassword";
+import MyAccount from "@pages/MyAccount";
+import CreateAccount from "@pages/CreateAccount";
+import Checkout from "@pages/Checkout";
+import Orders from "@pages/Orders";
+import NotFound from "@pages/NotFound";
 
-import AppContext from "@context/AppContext"
-import useInitialState from '@hooks/useInitialState'
+import AppContext from "@context/AppContext";
+import useInitialState from "@hooks/useInitialState";
 
-import "@styles/global.css"
-
+import "@styles/global.css";
 
 const App = () => {
-
-  const initialState = useInitialState()
+  const initialState = useInitialState();
 
   return (
     <AppContext.Provider value={initialState}>
@@ -28,8 +26,12 @@ const App = () => {
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/login" element={<Login />}/>
-            <Route exact path="/password-recovery" element={<PasswordRecovery />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route
+              exact
+              path="/password-recovery"
+              element={<PasswordRecovery />}
+            />
             <Route exact path="/new-password" element={<NewPassword />} />
             <Route exact path="/account" element={<MyAccount />} />
             <Route exact path="/signup" element={<CreateAccount />} />
@@ -39,8 +41,8 @@ const App = () => {
           </Routes>
         </Layout>
       </BrowserRouter>
-    </ AppContext.Provider>
-  )
-}
+    </AppContext.Provider>
+  );
+};
 
-export default App
+export default App;

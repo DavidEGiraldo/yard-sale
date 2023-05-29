@@ -8,13 +8,13 @@ import "@styles/MyOrder.scss";
 
 import arrow from "@icons/flechita.svg";
 
-const MyOrder = () => {
+const MyOrder = (props) => {
   const { state } = useContext(AppContext);
 
   return (
     <aside>
       <div className="title">
-        <img src={arrow} alt="arrow" />
+        <img src={arrow} alt="arrow" onClick={() => props.setToggleOrder(false)}/>
         <h1>Shopping cart</h1>
       </div>
       <div className="shopping-cart-content">

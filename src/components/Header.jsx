@@ -62,9 +62,9 @@ const Header = () => {
         </li>
       </ul>
       {toggle && <Menu />}
-      {toggleOrder && <MyOrder />}
+      {toggleOrder && <MyOrder setToggleOrder={setToggleOrder}/>}
     </nav>
   );
 };
 
-export default Header
+export default Header;

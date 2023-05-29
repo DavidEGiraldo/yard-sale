@@ -1,40 +1,40 @@
 @use "./vars";
 
-.login {
+.my-account {
   display: grid;
   place-items: center;
   width: 100%;
   height: 100vh;
 }
-.form-container {
+.my-account .form-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
   width: 300px;
 }
-.title {
+.my-account .form-container .title {
   font-size: var(--lg);
   margin-bottom: 44px;
 }
-.form {
+.my-account .form-container .form {
   display: flex;
   flex-direction: column;
 }
-.form div {
+.my-account .form-container .form div {
   display: flex;
   flex-direction: column;
 }
-.label {
+.my-account .form-container .form div .label {
   margin-bottom: 4px;
   font-size: var(--sm);
   font-weight: 700;
 }
-.value {
+.my-account .form-container .form div .value {
   color: var(--dark);
   font-size: var(--md);
   margin: 12px 0 24px 0;
   height: 28px;
 }
-.secondary-button {
+.my-account .form-container .form .secondary-button {
   padding: 18px;
   font-size: var(--md);
   font-weight: 700;
@@ -46,18 +46,18 @@
   cursor: pointer;
   width: 100%;
 }
-.login-button {
+.my-account .form-container .form .login-button {
   margin-top: 20px;
   margin-bottom: 28px;
 }
 @media (max-width: 640px) {
-  .form-container {
+  .my-account .form-container {
       height: 100%;
   }
-  .title {
+  .my-account .form-container .title {
       margin-top: 36px;
   }
-  .form {
+  .my-account .form-container .form {
       height: 100%;
       justify-content: space-between;
   }
