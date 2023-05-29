@@ -13,11 +13,12 @@
 }
 .menu {
   display: none;
+  cursor: pointer;
 }
 .nav-logo {
   width: 140px;
 }
-.navbar ul {
+.navbar > ul {
   display: flex;
   align-items: center;
   list-style: none;

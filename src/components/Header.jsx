@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "@styles/Header.scss";
 
 import Menu from "@components/Menu";
+import MobileMenu from "./MobileMenu";
 import MyOrder from "@containers/MyOrder";
 
 import AppContext from "@context/AppContext";
@@ -15,12 +16,28 @@ import iconShoppingCartNotification from "@icons/icon_shopping_cart_notification
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrder, setToggleOrder] = useState(false);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
 
   const { state } = useContext(AppContext);
 
+  const handleToggleOrder = () => {
+    setToggleOrder(!toggleOrder)
+    setToggleMobileMenu(false)
+  }
+
+  const handleToggleMobileMenu = () => {
+    setToggleMobileMenu(!toggleMobileMenu)
+    setToggleOrder(false)
+  }
+
   return (
     <nav className="navbar">
-      <img src={iconMenu} alt="menu-mobile" className="menu" />
+      <img
+        src={iconMenu}
+        alt="menu-mobile"
+        className="menu"
+        onClick={handleToggleMobileMenu}
+      />
       <img src={logo} alt="logo yard sale" className="nav-logo" />
       <ul className="categories">
         <li>
@@ -49,7 +66,7 @@ const Header = () => {
         </li>
         <li
           className="shopping-cart"
-          onClick={() => setToggleOrder(!toggleOrder)}
+          onClick={handleToggleOrder}
         >
           <img
             src={
@@ -62,7 +79,8 @@ const Header = () => {
         </li>
       </ul>
       {toggle && <Menu />}
-      {toggleOrder && <MyOrder setToggleOrder={setToggleOrder}/>}
+      {toggleOrder && <MyOrder setToggleOrder={setToggleOrder} />}
+      {toggleMobileMenu && <MobileMenu />}
     </nav>
   );
 };
